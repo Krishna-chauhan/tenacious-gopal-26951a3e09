@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tenacious-gopal-26951a3e09-srv
+  namespace: apps-prod
+spec:
+  selector:
+    app: tenacious-gopal-26951a3e09
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 7070
+  type: ClusterIP

@@ -1,0 +1,16 @@
+apiVersion: networking.gke.io/v1
+kind: HealthCheckPolicy
+metadata:
+  name: tenacious-gopal-26951a3e09-hc
+  namespace: apps-prod
+spec:
+  default:
+    config:
+      type: HTTP
+      httpHealthCheck:
+        port: 7070
+        requestPath: /docs
+  targetRef:
+    group: ""
+    kind: Service
+    name: tenacious-gopal-26951a3e09-srv
